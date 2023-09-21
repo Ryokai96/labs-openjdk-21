@@ -249,7 +249,7 @@ local contains(str, needle) = std.findSubstr(needle, str) != [];
         # Checkout the graal-enterprise repo to the "_gate" version of the
         # named downstream branch. This ensures the graal-enterprise and
         # graal repos will be in sync.
-        local branch = if downstream_branch == "master" then "master" else downstream_branch + "_gate",
+        local branch = if downstream_branch == "cpu/graal-vm/23.1" then "cpu/graal-vm/23.1" else downstream_branch + "_gate",
 
         run+: [
             ["git", "clone", defs.graal_enterprise_url],
