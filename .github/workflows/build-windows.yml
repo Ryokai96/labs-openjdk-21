@@ -157,7 +157,7 @@ jobs:
       - name: 'Upload to release'
         uses: xresloader/upload-to-github-release@v1
         with:
-          file: "D:\\a\\labs-openjdk-21\\labs-openjdk-21\\bundles\\jdk-windows-x64.zip"
+          file: "bundles/jdk-${{ inputs.platform }}${{ inputs.debug-suffix }}"
           tags: false
           draft: false
         env:
