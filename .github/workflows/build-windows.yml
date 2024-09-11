@@ -158,7 +158,7 @@ jobs:
         uses: xresloader/upload-to-github-release@v1
         with:
           file: "D:\\a\\labs-openjdk-21\\labs-openjdk-21\\bundles\\jdk-windows-x64.zip"
-          tags: true
-          draft: true
+          tags: false
+          draft: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
