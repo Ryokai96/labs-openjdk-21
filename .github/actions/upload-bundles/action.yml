@@ -79,7 +79,7 @@ runs:
     - name: 'Upload to release'
       uses: xresloader/upload-to-github-release@v1
       with:
-        file: "bundles/jdk-${{ inputs.platform }}${{ inputs.debug-suffix }}.zip"
+        file: bundles/jdk-${{ inputs.platform }}${{ inputs.debug-suffix }}.zip
         tags: false
         draft: false
       env:
