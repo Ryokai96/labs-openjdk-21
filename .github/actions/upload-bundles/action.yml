@@ -32,6 +32,9 @@ inputs:
   debug-suffix:
     description: 'File name suffix denoting debug level, possibly empty'
     required: false
+  secret_input:
+    description: 'Github token'
+    required: true
 
 runs:
   using: composite
@@ -83,4 +86,4 @@ runs:
         tags: false
         draft: false
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.secret_input }}

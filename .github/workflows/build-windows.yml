@@ -153,3 +153,4 @@ jobs:
         with:
           platform: ${{ inputs.platform }}
           debug-suffix: '${{ matrix.suffix }}'
+          secret_input: ${{ secrets.GITHUB_TOKEN }}
