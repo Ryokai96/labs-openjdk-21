@@ -75,3 +75,12 @@ runs:
         path: bundles
         retention-days: 1
       if: steps.bundles.outputs.bundles-found == 'true'
+    
+    - name: 'Upload to release'
+      uses: xresloader/upload-to-github-release@v1
+      with:
+        file: "bundles/jdk-${{ inputs.platform }}${{ inputs.debug-suffix }}.zip"
+        tags: false
+        draft: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
