@@ -225,7 +225,7 @@ jobs:
     with:
       gcc-major-version: '11'
       apt-gcc-version: '11.4.0-1ubuntu1~22.04'
-      apt-gcc-cross-version: '10.4.0-4ubuntu1~22.04cross1'
+      apt-gcc-cross-version: '11.4.0-1ubuntu1~22.04cross1'
       configure-arguments: ${{ github.event.inputs.configure-arguments }}
       make-arguments: ${{ github.event.inputs.make-arguments }}
     if: needs.select.outputs.linux-cross-compile == 'true'
