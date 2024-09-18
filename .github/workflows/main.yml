@@ -42,7 +42,6 @@ on:
       make-arguments:
         description: 'Additional make arguments'
         required: false
-        default: 'graal-builder-image'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

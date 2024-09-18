@@ -310,6 +310,14 @@ ifneq ($(filter product-bundles% legacy-bundles, $(MAKECMDGOALS)), )
 
     PRODUCT_TARGETS += $(BUILD_JDK_BUNDLE)
 
+    $(eval $(call SetupCopyFiles, COPY_STATIC_LIBS, \
+      SRC := $(STATIC_LIBS_IMAGE_DIR)/lib, \
+      DEST := $(GRAAL_BUILDER_IMAGE_DIR)/lib, \
+      FILES := $(filter %$(STATIC_LIBRARY_SUFFIX), \
+          $(call FindFiles, $(STATIC_LIBS_IMAGE_DIR)/lib)), \
+    ))
+    PRODUCT_TARGETS += $(COPY_STATIC_LIBS)
+
     ################################################################################
     # JRE bundle
     $(eval $(call SetupCopyFiles, CREATE_JRE_BUNDLE_DIR_SIGNED, \
@@ -349,6 +357,14 @@ ifneq ($(filter product-bundles% legacy-bundles, $(MAKECMDGOALS)), )
     ))
 
     PRODUCT_TARGETS += $(BUILD_JDK_BUNDLE)
+
+    $(eval $(call SetupCopyFiles, COPY_STATIC_LIBS, \
+      SRC := $(STATIC_LIBS_IMAGE_DIR)/lib, \
+      DEST := $(GRAAL_BUILDER_IMAGE_DIR)/lib, \
+      FILES := $(filter %$(STATIC_LIBRARY_SUFFIX), \
+          $(call FindFiles, $(STATIC_LIBS_IMAGE_DIR)/lib)), \
+    ))
+    PRODUCT_TARGETS += $(COPY_STATIC_LIBS)
 
     $(eval $(call SetupBundleFile, BUILD_JRE_BUNDLE, \
         BUNDLE_NAME := $(JRE_BUNDLE_NAME), \

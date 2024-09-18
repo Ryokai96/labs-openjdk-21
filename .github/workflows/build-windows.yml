@@ -37,7 +37,7 @@ on:
       make-target:
         required: false
         type: string
-        default: 'graal-builder-image'
+        default: 'product-bundles test-bundles'
       debug-levels:
         required: false
         type: string
